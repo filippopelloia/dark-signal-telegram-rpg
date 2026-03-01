@@ -1,0 +1,29 @@
+# Ambiente virtuale
+.venv/
+env/
+venv/
+
+# Variabili d'ambiente (MAI committare!)
+.env
+
+# Database locale
+*./database/db.py
+*.sqlite3
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Log
+*.log
+
+# macOS
+.DS_Store

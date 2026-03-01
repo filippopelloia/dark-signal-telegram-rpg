@@ -1,0 +1,153 @@
+{
+  "lang_name": "English",
+  "flag": "🇬🇧",
+
+  "welcome_title": "🛸 <b>ALIEN: DARK SIGNAL</b>",
+  "welcome_sub": "A text RPG in the Alien universe",
+  "select_language": "Select your language:",
+
+  "main_menu": "📡 <b>MAIN MENU</b>",
+  "btn_new_game": "🎮 New Game",
+  "btn_continue": "▶️ Continue",
+  "btn_profile": "👤 Profile",
+  "btn_inventory": "🎒 Inventory",
+  "btn_archive": "📂 Lore Archive",
+  "btn_settings": "⚙️ Settings",
+  "btn_achievements": "🏆 Achievements",
+  "btn_daily": "📅 Daily Mission",
+
+  "no_save": "No save file found.",
+  "game_saved": "✅ Game saved.",
+
+  "char_creation_title": "🔧 <b>CHARACTER CREATION</b>",
+  "char_name_prompt": "What is your character's name?\n\n<i>Type the name below:</i>",
+  "char_callsign_prompt": "Good, <b>{name}</b>. What's your callsign?\n\n<i>Type your code name:</i>",
+  "char_background_prompt": "📋 <b>BACKGROUND</b>\n\nWhat is your operational background?\n\n<i>This choice determines your starting stats.</i>",
+  "bg_marine": "🪖 Colonial Marine",
+  "bg_marine_desc": "Strength +2, Endurance +2, Charisma -1",
+  "bg_scientist": "🔬 W-Y Scientist",
+  "bg_scientist_desc": "Intelligence +3, Hacking +2, Combat -1",
+  "bg_tech": "🔧 Ship Technician",
+  "bg_tech_desc": "Engineering +3, Stealth +1, Endurance +1",
+  "bg_survivor": "🧠 Civilian Survivor",
+  "bg_survivor_desc": "Adaptability +2, Luck +2, Balanced stats",
+  "bg_synthetic": "🤖 Synthetic",
+  "bg_synthetic_desc": "Panic immunity, Analysis +3, No morale bonus",
+
+  "psych_prompt": "🧠 <b>PSYCHOLOGICAL TRAIT</b>\n\nHow do you react under pressure?",
+  "psych_cold": "🧊 Cold and Rational",
+  "psych_brave": "⚡ Instinctive and Brave",
+  "psych_paranoid": "👁️ Paranoid",
+  "psych_empathic": "💗 Empathic",
+
+  "starter_item_prompt": "🎒 <b>STARTING EQUIPMENT</b>\n\nChoose a bonus item:",
+  "item_pulse_rifle": "🔫 Modified M41A Pulse Rifle",
+  "item_motion_tracker": "📡 Advanced Motion Tracker",
+  "item_medkit": "💊 Weyland Premium Med-Kit",
+  "item_terminal": "💻 Corporate Terminal Access (Lvl 3)",
+  "item_blade": "🗡️ Monomolecular Silent Blade",
+
+  "char_confirm": "✅ <b>CHARACTER CREATED</b>\n\nName: <b>{name}</b> «{callsign}»\nBackground: {background}\nTrait: {psych}\nItem: {item}\n\n<i>Ready to step into the dark?</i>",
+  "btn_confirm": "✅ Confirm & Start",
+  "btn_restart_creation": "🔄 Start Over",
+
+  "permadeath_prompt": "☠️ <b>GAME MODE</b>\n\nDo you want to activate <b>NOSTROMO MODE</b>?\n\n⚠️ Permadeath active — if you die, you start over. But you'll unlock exclusive content and a secret ending.",
+  "btn_nostromo": "☠️ NOSTROMO MODE (Permadeath)",
+  "btn_standard": "🛡️ Standard Mode",
+
+  "level_up": "⬆️ <b>LEVEL UP!</b>\nYou are now Level {level}!\nYou have {points} stat points to assign. Use /profile to allocate them.",
+
+  "profile_title": "👤 <b>PROFILE — {name}</b> «{callsign}»",
+  "profile_bg": "Background: <b>{bg}</b>",
+  "profile_level": "Level: <b>{level}</b> ({xp}/{max_xp} XP)",
+  "profile_vitals": "❤️ HP: {hp}/{max_hp} | 😰 Stress: {stress}%\n🔋 Torch: {battery}% | 💊 Medkits: {medkits}\n🔫 Ammo: {ammo}",
+  "profile_stats": "📊 <b>STATS:</b>\n💪 Strength: {strength}\n🧠 Intelligence: {intelligence}\n👣 Stealth: {stealth}\n🔧 Engineering: {engineering}\n🛡️ Endurance: {endurance}\n🗣️ Charisma: {charisma}\n🍀 Luck: {luck}\n🔄 Adaptability: {adaptability}",
+  "profile_stat_points": "⭐ Available Stat Points: <b>{points}</b>",
+  "profile_chapter": "📖 Chapter: <b>{chapter}</b>",
+  "profile_streak": "🔥 Streak: <b>{streak}</b> days",
+  "btn_upgrade_stat": "⬆️ Upgrade Stat",
+
+  "upgrade_stat_prompt": "Which stat do you want to upgrade?\n\nYou have <b>{points}</b> points available.",
+  "stat_upgraded": "✅ {stat} increased to {value}!",
+  "no_stat_points": "❌ No stat points available.",
+  "stat_maxed": "❌ This stat is already maxed.",
+
+  "inventory_title": "🎒 <b>INVENTORY</b>\n\nItems in possession:",
+  "inventory_empty": "Inventory is empty.",
+
+  "archive_title": "📂 <b>LORE ARCHIVE</b>\n\nDocuments recovered: {count}",
+  "archive_empty": "No documents found yet. Explore carefully.",
+
+  "achievements_title": "🏆 <b>ACHIEVEMENTS</b>",
+  "no_achievements": "No achievements unlocked yet.",
+
+  "daily_available": "📅 <b>DAILY MISSION</b>\n\nNew mission available!\n\n<i>Each completed mission grants bonus XP and rare items.</i>",
+  "daily_done": "✅ Daily mission already completed. Come back in {hours}h {mins}m.",
+
+  "settings_title": "⚙️ <b>SETTINGS</b>",
+  "btn_change_language": "🌐 Change Language",
+  "btn_toggle_notifications": "🔔 Notifications",
+  "btn_toggle_permadeath": "☠️ Nostromo Mode",
+  "notifications_on": "Notifications: <b>ON</b>",
+  "notifications_off": "Notifications: <b>OFF</b>",
+
+  "stress_warning": "⚠️ <b>WARNING:</b> Your stress level is critical. Your perceptions may not be reliable.",
+  "paranoia_trigger": "🧠 <i>Your mind wanders... every shadow looks like a predator.</i>",
+
+  "combat_title": "⚔️ <b>COMBAT</b>",
+  "combat_vs": "You come face to face with: <b>{enemy}</b>",
+  "combat_hp": "❤️ Your HP: {hp} | Enemy HP: {enemy_hp}",
+  "btn_attack": "🔫 Attack",
+  "btn_dodge": "💨 Dodge",
+  "btn_use_item": "🎒 Use Item",
+  "btn_flee": "🏃 Flee",
+  "btn_use_adrenaline": "💉 Adrenaline",
+
+  "attack_hit": "💥 Hit! You deal <b>{dmg}</b> damage. Enemy has {hp} HP remaining.",
+  "attack_miss": "❌ Missed! The Xenomorph moves too fast.",
+  "dodge_success": "✅ Dodged! The attack grazes you in the darkness.",
+  "dodge_fail": "❌ Can't dodge — you take <b>{dmg}</b> damage!",
+  "flee_success": "🏃 You flee into the darkness. The Xenomorph shrieks behind you.",
+  "flee_fail": "❌ You can't flee! The Xenomorph blocks your path.",
+  "enemy_attack": "👾 The Xenomorph attacks! You take <b>{dmg}</b> damage.",
+  "combat_win": "✅ <b>ENEMY ELIMINATED</b>\n+{xp} XP earned!",
+  "combat_dead": "💀 <b>YOU DIED</b>\n\nTheta's darkness swallows you whole.",
+  "no_ammo": "❌ Out of ammo! You need another tactic.",
+
+  "xeno_types": {
+    "drone": "🖤 Xenomorph Drone",
+    "warrior": "💀 Xenomorph Warrior",
+    "architect": "🧬 Architect Xenomorph",
+    "facehugger": "🕷️ Facehugger",
+    "praetorian": "👑 Praetorian"
+  },
+
+  "motion_tracker": "📡 <i>BEEP... BEEP... BEEP...</i>\nMovement detected: <b>{distance}m</b> — direction: <b>{direction}</b>",
+  "tracker_clear": "📡 <i>Tracker's silent. For now.</i>",
+
+  "scene_continue": "▶️ Continue",
+  "scene_back": "◀️ Back",
+  "scene_map": "🗺️ Map",
+  "locked_choice": "🔒 {reason}",
+
+  "chapter_locked": "🔒 <b>CHAPTER {num} LOCKED</b>\n\nAvailable in: <b>{time}</b>\n\n<i>«Signals keep coming. Something moves in the dark.»</i>",
+
+  "npc_ajax": "AJAX-7",
+  "npc_chen": "Cpl. Sarah Chen",
+  "npc_okafor": "Dr. Marcus Okafor",
+  "npc_vance": "Lt. Ray Vance",
+  "npc_petra": "Petra Morel",
+
+  "game_over_permadeath": "☠️ <b>NOSTROMO MODE — GAME OVER</b>\n\nYou died on Prometheus Station Theta.\n\nYour story ends here. But the station keeps transmitting its dark signal...\n\n<i>Do you want to try again?</i>",
+  "btn_restart": "🔄 Start Again",
+
+  "achievement_names": {
+    "first_blood": "🩸 First Blood",
+    "theta_survivor": "🏆 Survivor of Theta",
+    "no_one_hears": "🔇 No One Hears You Scream",
+    "machine_trust": "🤖 The Machine Trusts You",
+    "lore_hunter": "📚 Secrets Hunter",
+    "perfect_run": "⭐ Perfect Run",
+    "nostromo_clear": "☠️ The True Survivor"
+  }
+}

@@ -1,0 +1,723 @@
+{
+  "chapter": 1,
+  "title": {
+    "en": "SILENCE OF THETA",
+    "it": "SILENZIO DI THETA",
+    "es": "SILENCIO DE THETA"
+  },
+  "intro": {
+    "en": "📅 <b>YEAR 2197. DEEP SPACE.</b>\n\nThe transport shuttle <i>USS Cortez</i> cuts through the void at 0.3c. Around you: steel, recycled air, and the silence of six colleagues who know, just like you, that silence radio from Prometheus Station Theta lasted exactly 72 hours.\n\n<b>Weyland-Yutani</b> has called it a «technical failure.» Nobody on this shuttle believes that.",
+    "it": "📅 <b>ANNO 2197. SPAZIO PROFONDO.</b>\n\nLa navetta di trasporto <i>USS Cortez</i> taglia il vuoto a 0.3c. Attorno a te: acciaio, aria riciclata, e il silenzio di sei colleghi che sanno, proprio come te, che il silenzio radio dalla Prometheus Station Theta dura da esattamente 72 ore.\n\n<b>Weyland-Yutani</b> l'ha definito un «guasto tecnico». Nessuno su questa navetta ci crede.",
+    "es": "📅 <b>AÑO 2197. ESPACIO PROFUNDO.</b>\n\nEl transbordador <i>USS Cortez</i> atraviesa el vacío a 0.3c. A tu alrededor: acero, aire reciclado, y el silencio de seis compañeros que saben, igual que tú, que el silencio de radio desde la Prometheus Station Theta dura exactamente 72 horas.\n\n<b>Weyland-Yutani</b> lo llamó «fallo técnico». Nadie en este transbordador lo cree."
+  },
+  "scenes": {
+    "c1_shuttle": {
+      "id": "c1_shuttle",
+      "text": {
+        "en": "🚀 <b>ABOARD USS CORTEZ — T-MINUS 2 HOURS</b>\n\nThe hum of the engines fills the cabin. AJAX-7 sits across from you — the synthetic's white eyes are fixed on the viewfinder without blinking. Beside him, <b>Cpl. Sarah Chen</b> checks her M41A for the third time in an hour.\n\n<i>«Whatever happened there,»</i> whispers Chen, eyes on the barrel, <i>«it happened fast.»</i>\n\nYour motion tracker emits a brief ping. Then nothing. False alarm. Maybe.",
+        "it": "🚀 <b>A BORDO DELL'USS CORTEZ — T-MENO 2 ORE</b>\n\nIl ronzio dei motori riempie la cabina. AJAX-7 è seduto di fronte a te — gli occhi bianchi del sintetico sono fissi sul mirino senza battere ciglio. Accanto a lui, il <b>Cpl. Sarah Chen</b> controlla il suo M41A per la terza volta nell'ultima ora.\n\n<i>«Qualunque cosa sia successa lì,»</i> mormora Chen, gli occhi sulla canna, <i>«è successa in fretta.»</i>\n\nIl tuo motion tracker emette un breve bip. Poi nulla. Falso allarme. Forse.",
+        "es": "🚀 <b>A BORDO DEL USS CORTEZ — T-MENOS 2 HORAS</b>\n\nEl zumbido de los motores llena la cabina. AJAX-7 está sentado frente a ti — los ojos blancos del sintético están fijos en el visor sin parpadear. A su lado, el <b>Cbo. Sarah Chen</b> comprueba su M41A por tercera vez en una hora.\n\n<i>«Sea lo que sea que ocurrió allí,»</i> susurra Chen, mirando el cañón, <i>«ocurrió rápido.»</i>\n\nTu detector de movimiento emite un breve pitido. Luego nada. Falsa alarma. Tal vez."
+      },
+      "choices": [
+        {
+          "id": "talk_ajax",
+          "text": {
+            "en": "💬 Ask AJAX-7 what he knows about Theta",
+            "it": "💬 Chiedi ad AJAX-7 cosa sa di Theta",
+            "es": "💬 Pregunta a AJAX-7 qué sabe sobre Theta"
+          },
+          "next": "c1_ajax_talk",
+          "requires": null,
+          "flags_set": {"talked_ajax_1": true}
+        },
+        {
+          "id": "talk_chen",
+          "text": {
+            "en": "🪖 Ask Chen about her experience",
+            "it": "🪖 Chiedi a Chen della sua esperienza",
+            "es": "🪖 Pregunta a Chen sobre su experiencia"
+          },
+          "next": "c1_chen_talk",
+          "requires": null,
+          "flags_set": {}
+        },
+        {
+          "id": "check_tracker",
+          "text": {
+            "en": "📡 Analyze the motion tracker signal",
+            "it": "📡 Analizza il segnale del motion tracker",
+            "es": "📡 Analiza la señal del detector de movimiento"
+          },
+          "next": "c1_tracker_check",
+          "requires": {"stat": "intelligence", "value": 4},
+          "locked_reason": {
+            "en": "Your hands tremble. You lack the focus to analyze it.",
+            "it": "Le tue mani tremano. Ti manca la concentrazione per analizzarlo.",
+            "es": "Tus manos tiemblan. Te falta concentración para analizarlo."
+          },
+          "flags_set": {},
+          "lore_unlock": "lore_theta_signal_1"
+        },
+        {
+          "id": "stay_silent",
+          "text": {
+            "en": "😶 Stay silent. Save your energy.",
+            "it": "😶 Rimani in silenzio. Risparmia le energie.",
+            "es": "😶 Permanece en silencio. Ahorra energías."
+          },
+          "next": "c1_silent",
+          "requires": null,
+          "flags_set": {"psych_reserved": true},
+          "effects": {"stress": -5}
+        }
+      ]
+    },
+
+    "c1_ajax_talk": {
+      "id": "c1_ajax_talk",
+      "text": {
+        "en": "AJAX-7 turns to you. His movements are too smooth — a tell that reminds you he isn't human.\n\n<i>«Prometheus Station Theta»</i>, he says in a flat tone, <i>«was built in 2151 under Project Black Seed. Classification level: Omega. I have access to 12% of its public documentation. The rest is encrypted with a key I do not possess.»</i>\n\nA pause. Then:\n\n<i>«However,»</i> he adds, and something in his voice shifts — barely, <i>«the signal that stopped wasn't a technical failure. Theta was broadcasting a repeating distress loop. On a frequency Weyland-Yutani considers... discontinued.»</i>\n\nHe goes back to staring straight ahead. Conversation over.",
+        "it": "AJAX-7 si volta verso di te. I suoi movimenti sono troppo fluidi — un dettaglio che ti ricorda che non è umano.\n\n<i>«Prometheus Station Theta»</i>, dice in tono piatto, <i>«è stata costruita nel 2151 nell'ambito del Progetto Black Seed. Livello di classificazione: Omega. Ho accesso al 12% della sua documentazione pubblica. Il resto è criptato con una chiave che non possiedo.»</i>\n\nUna pausa. Poi:\n\n<i>«Tuttavia,»</i> aggiunge, e qualcosa nella sua voce cambia — appena, <i>«il segnale che si è interrotto non era un guasto tecnico. Theta trasmetteva un loop di soccorso ripetuto. Su una frequenza che Weyland-Yutani considera... dismessa.»</i>\n\nTorna a fissare davanti a sé. Conversazione chiusa.",
+        "es": "AJAX-7 se gira hacia ti. Sus movimientos son demasiado fluidos — un detalle que te recuerda que no es humano.\n\n<i>«Prometheus Station Theta»</i>, dice en tono neutro, <i>«fue construida en 2151 bajo el Proyecto Semilla Negra. Nivel de clasificación: Omega. Tengo acceso al 12% de su documentación pública. El resto está cifrado con una clave que no poseo.»</i>\n\nUna pausa. Luego:\n\n<i>«Sin embargo,»</i> añade, y algo en su voz cambia — apenas, <i>«la señal que se detuvo no fue un fallo técnico. Theta transmitía un bucle de socorro repetido. En una frecuencia que Weyland-Yutani considera... obsoleta.»</i>\n\nVuelve a mirar al frente. Conversación terminada."
+      },
+      "effects": {"npc_ajax_trust": 5, "xp": 15},
+      "lore_unlock": "lore_project_black_seed",
+      "choices": [
+        {
+          "id": "press_ajax",
+          "text": {"en": "🔍 Press him — what frequency?", "it": "🔍 Insisti — che frequenza?", "es": "🔍 Insiste — ¿qué frecuencia?"},
+          "next": "c1_ajax_freq",
+          "requires": {"stat": "charisma", "value": 5},
+          "locked_reason": {"en": "He turns away. You don't have the authority.", "it": "Si gira dall'altra parte. Non hai l'autorità.", "es": "Se da la vuelta. No tienes la autoridad."},
+          "flags_set": {"knows_frequency": true}
+        },
+        {
+          "id": "back_to_shuttle",
+          "text": {"en": "▶️ Continue to approach", "it": "▶️ Continua verso l'approccio", "es": "▶️ Continúa hacia la aproximación"},
+          "next": "c1_approach",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_ajax_freq": {
+      "id": "c1_ajax_freq",
+      "text": {
+        "en": "AJAX-7's gaze lingers on you for three full seconds.\n\n<i>«Engineer frequency,»</i> he says, almost whispering. <i>«The same used during the LV-223 incident. According to Weyland archives — which I should not have access to — it was used in conjunction with the Black Fluid. The Accelerant.»</i>\n\nHe says nothing more. But you notice something:\n\nHis hands are clasped. Perfectly still. Not even a synthetic does that unless he's choosing very carefully what not to say.",
+        "it": "Lo sguardo di AJAX-7 rimane su di te per tre interi secondi.\n\n<i>«Frequenza Engineer,»</i> dice, quasi sussurrando. <i>«La stessa usata durante l'incidente di LV-223. Secondo gli archivi Weyland — ai quali non dovrei avere accesso — veniva usata in congiunzione con il Fluido Nero. L'Accelerante.»</i>\n\nNon dice altro. Ma noti qualcosa:\n\nLe sue mani sono giunte. Perfettamente immobili. Nemmeno un sintetico fa così a meno che non stia scegliendo con molta cura cosa non dire.",
+        "es": "La mirada de AJAX-7 permanece en ti durante tres segundos completos.\n\n<i>«Frecuencia Engineer,»</i> dice, casi susurrando. <i>«La misma usada durante el incidente de LV-223. Según los archivos Weyland — a los que no debería tener acceso — se usaba junto al Fluido Negro. El Acelerante.»</i>\n\nNo dice nada más. Pero notas algo:\n\nSus manos están entrelazadas. Perfectamente inmóviles. Ni siquiera un sintético hace eso a menos que esté eligiendo muy cuidadosamente qué no decir."
+      },
+      "effects": {"npc_ajax_trust": 10, "stress": 10, "xp": 25},
+      "lore_unlock": "lore_engineer_frequency",
+      "choices": [
+        {
+          "id": "continue_approach",
+          "text": {"en": "▶️ Continue — Theta is close", "it": "▶️ Continua — Theta è vicina", "es": "▶️ Continúa — Theta está cerca"},
+          "next": "c1_approach",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_chen_talk": {
+      "id": "c1_chen_talk",
+      "text": {
+        "en": "Chen lowers the rifle onto her knees. Her jaw tightens.\n\n<i>«LV-426. I wasn't there but my older brother was. Squad 15, Sulaco contingent. He never talked about it properly — only that it smelled of iron and ammonia and that the walls moved.»</i>\n\nShe picks the rifle back up.\n\n<i>«The walls moved.»</i> She repeats it like a prayer. <i>«Whatever's on Theta — don't trust what you see. And don't trust the silences.»</i>\n\nHer eyes, back on the barrel. End of conversation.",
+        "it": "Chen abbassa il fucile sulle ginocchia. La sua mascella si stringe.\n\n<i>«LV-426. Non c'ero, ma mio fratello maggiore sì. Squadra 15, contingente Sulaco. Non ne parlava mai bene — solo che sapeva di ferro e ammoniaca e che le pareti si muovevano.»</i>\n\nRipende il fucile.\n\n<i>«Le pareti si muovevano.»</i> Lo ripete come una preghiera. <i>«Qualunque cosa ci sia su Theta — non fidarti di quello che vedi. E non fidarti dei silenzi.»</i>\n\nI suoi occhi, di nuovo sulla canna. Fine della conversazione.",
+        "es": "Chen baja el rifle sobre sus rodillas. Su mandíbula se tensa.\n\n<i>«LV-426. No estuve allí pero mi hermano mayor sí. Escuadrón 15, contingente Sulaco. Nunca habló de ello correctamente — solo que olía a hierro y amoníaco y que las paredes se movían.»</i>\n\nVuelve a coger el rifle.\n\n<i>«Las paredes se movían.»</i> Lo repite como una oración. <i>«Sea lo que sea que haya en Theta — no confíes en lo que ves. Y no confíes en los silencios.»</i>\n\nSus ojos, de vuelta al cañón. Fin de la conversación."
+      },
+      "effects": {"npc_chen_trust": 10, "stress": 5, "xp": 10},
+      "lore_unlock": "lore_lv426_reference",
+      "choices": [
+        {
+          "id": "continue_approach",
+          "text": {"en": "▶️ Continue — Theta is close", "it": "▶️ Continua — Theta è vicina", "es": "▶️ Continúa — Theta está cerca"},
+          "next": "c1_approach",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_tracker_check": {
+      "id": "c1_tracker_check",
+      "text": {
+        "en": "📡 You isolate the tracker signal and run it through the nav computer.\n\nThe ping wasn't random noise. It was a structured pulse — repeating at exactly 3.7-second intervals. Too regular to be debris. Too faint to be a ship.\n\nIt came from <b>inside Theta Station</b>.\n\nSomething on board was trying to be heard. Or it was trying to locate you.",
+        "it": "📡 Isoli il segnale del tracker e lo esegui attraverso il computer di navigazione.\n\nIl ping non era rumore casuale. Era un impulso strutturato — ripetuto a intervalli esatti di 3,7 secondi. Troppo regolare per essere detriti. Troppo flebile per essere una nave.\n\nProveniva dall'<b>interno della Stazione Theta</b>.\n\nQualcosa a bordo stava cercando di farsi sentire. O stava cercando di localizzarti.",
+        "es": "📡 Aislas la señal del detector y la procesas en el ordenador de navegación.\n\nEl pitido no era ruido aleatorio. Era un pulso estructurado — repetiéndose a intervalos exactos de 3,7 segundos. Demasiado regular para ser escombros. Demasiado débil para ser una nave.\n\nProvenía del <b>interior de la Estación Theta</b>.\n\nAlgo a bordo intentaba hacerse oír. O intentaba localizarte."
+      },
+      "effects": {"stress": 15, "xp": 30},
+      "lore_unlock": "lore_theta_pulse",
+      "choices": [
+        {
+          "id": "tell_squad",
+          "text": {"en": "📢 Tell the squad what you found", "it": "📢 Di' alla squadra cosa hai trovato", "es": "📢 Dile al equipo lo que encontraste"},
+          "next": "c1_squad_briefing",
+          "requires": null,
+          "flags_set": {"squad_knows_pulse": true},
+          "effects": {"npc_chen_trust": 5, "npc_ajax_trust": 5}
+        },
+        {
+          "id": "keep_secret",
+          "text": {"en": "🤫 Keep it to yourself", "it": "🤫 Tienilo per te", "es": "🤫 Guárdatelo"},
+          "next": "c1_approach",
+          "requires": null,
+          "flags_set": {"kept_pulse_secret": true}
+        }
+      ]
+    },
+
+    "c1_silent": {
+      "id": "c1_silent",
+      "text": {
+        "en": "You close your eyes. The engine hum becomes a kind of white noise. You don't sleep — no one could sleep — but for a moment you push the fear aside.\n\nWhen you open them again, AJAX-7 is watching you. His expression is unreadable, as always. But he gives a single, slow nod.\n\nAs if he approved.",
+        "it": "Chiudi gli occhi. Il ronzio del motore diventa una sorta di rumore bianco. Non dormi — nessuno potrebbe dormire — ma per un momento metti da parte la paura.\n\nQuando li riapri, AJAX-7 ti sta guardando. La sua espressione è illeggibile, come sempre. Ma annuisce, una volta, lentamente.\n\nCome se approvasse.",
+        "es": "Cierras los ojos. El zumbido del motor se convierte en una especie de ruido blanco. No duermes — nadie podría dormir — pero por un momento apartas el miedo.\n\nCuando los abres de nuevo, AJAX-7 te está observando. Su expresión es ilegible, como siempre. Pero asiente una vez, lentamente.\n\nComo si aprobara."
+      },
+      "effects": {"stress": -5, "npc_ajax_trust": 3},
+      "choices": [
+        {
+          "id": "continue_approach",
+          "text": {"en": "▶️ Continue", "it": "▶️ Continua", "es": "▶️ Continúa"},
+          "next": "c1_approach",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_squad_briefing": {
+      "id": "c1_squad_briefing",
+      "text": {
+        "en": "You pull up the tracker reading on the cabin display. The squad gathers.\n\nLt. Vance squints at the screen. <i>«Structured pulse. That's... not a malfunction.»</i>\n\nAJAX-7 is already analyzing. <i>«The interval matches a pattern documented during the Hadley's Hope incident. It is... consistent with Xenomorph nest-marking behavior.»</i>\n\nSilence. Heavy.\n\nChen racks her rifle. <i>«Then we're not going in to rescue survivors. We're going into a hive.»</i>",
+        "it": "Mostri la lettura del tracker sul display della cabina. La squadra si raduna.\n\nIl Lt. Vance strizza gli occhi sullo schermo. <i>«Impulso strutturato. Questo... non è un malfunzionamento.»</i>\n\nAJAX-7 sta già analizzando. <i>«L'intervallo corrisponde a un pattern documentato durante l'incidente di Hadley's Hope. È... coerente con il comportamento di marcatura del nido degli Xenomorfi.»</i>\n\nSilenzio. Pesante.\n\nChen arma il fucile. <i>«Quindi non andiamo a salvare superstiti. Stiamo andando in un alveare.»</i>",
+        "es": "Muestras la lectura del detector en la pantalla de la cabina. El equipo se reúne.\n\nEl Ten. Vance entrecierra los ojos ante la pantalla. <i>«Pulso estructurado. Eso... no es un fallo.»</i>\n\nAJAX-7 ya está analizando. <i>«El intervalo coincide con un patrón documentado durante el incidente de Hadley's Hope. Es... coherente con el comportamiento de marcado de nido xenomorfo.»</i>\n\nSilencio. Pesado.\n\nChen arma el rifle. <i>«Entonces no vamos a rescatar supervivientes. Vamos a entrar en una colmena.»</i>"
+      },
+      "effects": {"npc_vance_trust": 5, "stress": 20, "xp": 20},
+      "choices": [
+        {
+          "id": "continue_approach",
+          "text": {"en": "▶️ Continue — Theta appears on scanners", "it": "▶️ Continua — Theta appare sui scanner", "es": "▶️ Continúa — Theta aparece en los escáneres"},
+          "next": "c1_approach",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_approach": {
+      "id": "c1_approach",
+      "text": {
+        "en": "🛸 <b>PROMETHEUS STATION THETA — OUTER RING</b>\n\nTheta appears like a scar against the stars. A toroidal structure, two kilometers in diameter, rotating slowly — too slowly. The external power grid is at 12%.\n\nHalf the docking lights are dark. Emergency strobes pulse red across the hull at irregular intervals. Through the observation port you count at least seven hull breaches.\n\nThe USS Cortez docks with a metallic thud that reverberates throughout the ship.\n\n<i>You're here.</i>\n\n📡 Motion tracker: <b>CLEAR</b>. For now.",
+        "it": "🛸 <b>PROMETHEUS STATION THETA — ANELLO ESTERNO</b>\n\nTheta appare come una cicatrice contro le stelle. Una struttura toroidale, due chilometri di diametro, che ruota lentamente — troppo lentamente. La rete elettrica esterna è al 12%.\n\nMetà delle luci di attracco sono spente. I lampeggianti di emergenza pulsano rosso sullo scafo a intervalli irregolari. Dal portello di osservazione conti almeno sette brecce nello scafo.\n\nL'USS Cortez aggancia con un tonfo metallico che riverbera per tutta la nave.\n\n<i>Sei qui.</i>\n\n📡 Motion tracker: <b>LIBERO</b>. Per ora.",
+        "es": "🛸 <b>PROMETHEUS STATION THETA — ANILLO EXTERIOR</b>\n\nTheta aparece como una cicatriz contra las estrellas. Una estructura toroidal, dos kilómetros de diámetro, girando lentamente — demasiado despacio. La red de energía exterior está al 12%.\n\nLa mitad de las luces de atraque están apagadas. Las balizas de emergencia parpadean en rojo por el casco a intervalos irregulares. Por el ojo de buey cuentas al menos siete brechas en el casco.\n\nEl USS Cortez acopla con un golpe metálico que reverbera por toda la nave.\n\n<i>Estás aquí.</i>\n\n📡 Detector de movimiento: <b>DESPEJADO</b>. Por ahora."
+      },
+      "effects": {"stress": 10, "xp": 15},
+      "choices": [
+        {
+          "id": "enter_airlock",
+          "text": {"en": "🚪 Enter Theta — through the main airlock", "it": "🚪 Entra in Theta — dall'airlock principale", "es": "🚪 Entra a Theta — por la esclusa principal"},
+          "next": "c1_airlock",
+          "requires": null,
+          "flags_set": {}
+        },
+        {
+          "id": "scan_first",
+          "text": {"en": "🔍 Scan the station before entering", "it": "🔍 Scansiona la stazione prima di entrare", "es": "🔍 Escanea la estación antes de entrar"},
+          "next": "c1_scan",
+          "requires": {"stat": "engineering", "value": 4},
+          "locked_reason": {"en": "The scanner system requires technical expertise you don't have.", "it": "Il sistema scanner richiede competenze tecniche che non hai.", "es": "El sistema de escáner requiere experiencia técnica que no tienes."},
+          "flags_set": {"scanned_exterior": true},
+          "lore_unlock": "lore_theta_layout"
+        }
+      ]
+    },
+
+    "c1_scan": {
+      "id": "c1_scan",
+      "text": {
+        "en": "🔧 You run an external sensor sweep of Theta.\n\nThe results are... wrong.\n\nInternal temperature: <b>38°C</b> — twenty degrees above baseline. Organic mass readings on decks 3 through 7 are off the charts. And there are two heat signatures in the command module that shouldn't exist — too large for humans, wrong shape entirely.\n\nOn deck 9 you find something else: a single lifesign. Faint. Irregular. But alive.\n\nSomeone survived.",
+        "it": "🔧 Esegui una scansione esterna dei sensori di Theta.\n\nI risultati sono... sbagliati.\n\nTemperatura interna: <b>38°C</b> — venti gradi sopra la baseline. Le letture di massa organica sui ponti 3-7 sono fuori scala. E ci sono due segnature termiche nel modulo comando che non dovrebbero esistere — troppo grandi per gli esseri umani, forma completamente sbagliata.\n\nAl ponte 9 trovi qualcos'altro: un singolo segno vitale. Flebile. Irregolare. Ma vivo.\n\nQualcuno è sopravvissuto.",
+        "es": "🔧 Realizas un barrido de sensores exteriores de Theta.\n\nLos resultados están... mal.\n\nTemperatura interna: <b>38°C</b> — veinte grados sobre la línea base. Las lecturas de masa orgánica en las cubiertas 3 a 7 están fuera de escala. Y hay dos firmas térmicas en el módulo de mando que no deberían existir — demasiado grandes para humanos, forma completamente equivocada.\n\nEn la cubierta 9 encuentras algo más: una sola señal de vida. Débil. Irregular. Pero viva.\n\nAlguien sobrevivió."
+      },
+      "effects": {"xp": 35, "stress": 15},
+      "lore_unlock": "lore_theta_layout",
+      "choices": [
+        {
+          "id": "enter_airlock",
+          "text": {"en": "🚪 Enter Theta — find the survivor", "it": "🚪 Entra in Theta — trova il sopravvissuto", "es": "🚪 Entra a Theta — encuentra al superviviente"},
+          "next": "c1_airlock",
+          "requires": null,
+          "flags_set": {"knows_survivor": true}
+        }
+      ]
+    },
+
+    "c1_airlock": {
+      "id": "c1_airlock",
+      "text": {
+        "en": "🚪 <b>MAIN AIRLOCK — DECK A</b>\n\nThe airlock seals behind you with a pressurized hiss. The team checks weapons.\n\nThe corridor ahead is in near-total darkness. Emergency lighting casts everything in sickly red. The air smells of something burnt — synthetic polymer — and something else. Something biological. Sweet and wrong.\n\nAJAX-7 moves to the front. <i>«I recommend silence from here,»</i> he says, not whispering — his voice modulated low. <i>«They respond to vibration.»</i>\n\nYou hear it then. Distant. Something moving in the ceiling ducts.\n\n📡 <b>BEEP.</b> 47 meters. Direction: above.",
+        "it": "🚪 <b>AIRLOCK PRINCIPALE — PONTE A</b>\n\nL'airlock si sigilla dietro di te con un sibilo pressurizzato. La squadra controlla le armi.\n\nIl corridoio davanti è in quasi totale oscurità. L'illuminazione di emergenza tinge tutto di un rosso malsano. L'aria sa di qualcosa di bruciato — polimero sintetico — e di qualcos'altro. Qualcosa di biologico. Dolce e sbagliato.\n\nAJAX-7 si muove in testa. <i>«Raccomando il silenzio da qui,»</i> dice, senza sussurrare — la sua voce modulata bassa. <i>«Rispondono alle vibrazioni.»</i>\n\nLo senti allora. Lontano. Qualcosa che si muove nei condotti del soffitto.\n\n📡 <b>BIP.</b> 47 metri. Direzione: sopra.",
+        "es": "🚪 <b>ESCLUSA PRINCIPAL — CUBIERTA A</b>\n\nLa esclusa se sella detrás de ti con un siseo presurizado. El equipo revisa las armas.\n\nEl corredor de delante está en casi total oscuridad. La iluminación de emergencia tiñe todo de un rojo enfermizo. El aire huele a algo quemado — polímero sintético — y a algo más. Algo biológico. Dulce y equivocado.\n\nAJAX-7 se mueve al frente. <i>«Recomiendo silencio a partir de aquí,»</i> dice, sin susurrar — su voz modulada en bajo. <i>«Responden a la vibración.»</i>\n\nEntonces lo escuchas. Lejano. Algo moviéndose en los conductos del techo.\n\n📡 <b>BIP.</b> 47 metros. Dirección: arriba."
+      },
+      "effects": {"stress": 20, "battery": -5},
+      "choices": [
+        {
+          "id": "move_stealth",
+          "text": {"en": "👣 Move silently through the corridor", "it": "👣 Muoviti silenziosamente nel corridoio", "es": "👣 Muévete en silencio por el corredor"},
+          "next": "c1_corridor_stealth",
+          "requires": {"stat": "stealth", "value": 4},
+          "locked_reason": {"en": "Your boots clang on the grating. You'd make too much noise.", "it": "I tuoi stivali risuonano sulla griglia. Faresti troppo rumore.", "es": "Tus botas resuenan en la rejilla. Harías demasiado ruido."},
+          "flags_set": {}
+        },
+        {
+          "id": "move_fast",
+          "text": {"en": "⚡ Move fast — don't give it time to react", "it": "⚡ Muoviti veloce — non dargli il tempo di reagire", "es": "⚡ Muévete rápido — no le des tiempo a reaccionar"},
+          "next": "c1_corridor_fast",
+          "requires": null,
+          "flags_set": {}
+        },
+        {
+          "id": "use_tracker_scan",
+          "text": {"en": "📡 Use tracker to plan a route", "it": "📡 Usa il tracker per pianificare un percorso", "es": "📡 Usa el detector para planificar una ruta"},
+          "next": "c1_corridor_planned",
+          "requires": {"item": "motion_tracker"},
+          "locked_reason": {"en": "You don't have an advanced motion tracker.", "it": "Non hai un motion tracker avanzato.", "es": "No tienes un detector de movimiento avanzado."},
+          "flags_set": {"used_tracker_route": true},
+          "effects": {"stress": -10}
+        }
+      ]
+    },
+
+    "c1_corridor_stealth": {
+      "id": "c1_corridor_stealth",
+      "text": {
+        "en": "You move heel-to-toe through the corridor. Darkness presses in from all sides. Your torch cuts a pale beam that feels like a target painted on your chest.\n\nAbove you — close now, maybe ten meters — the sound of movement. Wet. Heavy. Something large shifting its weight in the duct.\n\n📡 <b>BEEP. BEEP.</b> 11 meters. Closing.\n\nYou freeze. Hold breath. The sound stops.\n\nSeconds pass like years.\n\nThen the tracker goes silent.\n\n<i>Gone. Or hiding.</i>",
+        "it": "Ti muovi tallone-punta nel corridoio. Il buio preme da ogni lato. La tua torcia taglia un fascio pallido che sembra un bersaglio dipinto sul petto.\n\nSopra di te — vicino ora, forse dieci metri — il suono del movimento. Umido. Pesante. Qualcosa di grande che sposta il suo peso nel condotto.\n\n📡 <b>BIP. BIP.</b> 11 metri. Si avvicina.\n\nTi congeli. Trattieni il respiro. Il suono si ferma.\n\nI secondi passano come anni.\n\nPoi il tracker si zittisce.\n\n<i>Sparito. O nascosto.</i>",
+        "es": "Te mueves talón-puntera por el corredor. La oscuridad presiona desde todos los lados. Tu linterna corta un haz pálido que parece una diana pintada en tu pecho.\n\nSobre ti — cerca ahora, tal vez diez metros — el sonido del movimiento. Húmedo. Pesado. Algo grande desplazando su peso en el conducto.\n\n📡 <b>BIP. BIP.</b> 11 metros. Se acerca.\n\nTe congelas. Retienes el aliento. El sonido se detiene.\n\nLos segundos pasan como años.\n\nLuego el detector enmudece.\n\n<i>Desaparecido. O escondido.</i>"
+      },
+      "effects": {"xp": 30, "stress": 15},
+      "choices": [
+        {
+          "id": "press_to_lab",
+          "text": {"en": "▶️ Press forward to the Research Lab", "it": "▶️ Avanza verso il Laboratorio di Ricerca", "es": "▶️ Avanza hacia el Laboratorio de Investigación"},
+          "next": "c1_research_lab",
+          "requires": null,
+          "flags_set": {"reached_lab": true}
+        },
+        {
+          "id": "check_side_room",
+          "text": {"en": "🚪 Check the side room — there's a light inside", "it": "🚪 Controlla la stanza laterale — c'è una luce dentro", "es": "🚪 Comprueba la habitación lateral — hay una luz dentro"},
+          "next": "c1_side_room",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_corridor_fast": {
+      "id": "c1_corridor_fast",
+      "text": {
+        "en": "You signal the squad and move — fast, controlled, weapons up.\n\n📡 <b>BEEP BEEP BEEP.</b> The signal drops to 8 meters. Then 5.\n\nSomething drops from the ceiling duct directly in front of you.\n\nIt's smaller than expected — a drone. Claws clicking on the grating, head tilted, inner jaw extending.\n\nChen fires first. The pulse rifle blast tears through the air — and misses.\n\n<b>The drone charges.</b>",
+        "it": "Segnali alla squadra e ti muovi — veloce, controllato, armi in alto.\n\n📡 <b>BIP BIP BIP.</b> Il segnale scende a 8 metri. Poi 5.\n\nQualcosa cade dal condotto del soffitto direttamente davanti a te.\n\nÈ più piccolo del previsto — un drone. Artigli che cliccano sulla griglia, testa inclinata, mandibola interna in estensione.\n\nChen spara per prima. La raffica del pulse rifle taglia l'aria — e manca.\n\n<b>Il drone carica.</b>",
+        "es": "Señalas al equipo y te mueves — rápido, controlado, armas en alto.\n\n📡 <b>BIP BIP BIP.</b> La señal cae a 8 metros. Luego 5.\n\nAlgo cae del conducto del techo directamente frente a ti.\n\nEs más pequeño de lo esperado — un drone. Garras haciendo clic en la rejilla, cabeza inclinada, mandíbula interior extendiéndose.\n\nChen dispara primero. La ráfaga del pulse rifle corta el aire — y falla.\n\n<b>El drone carga.</b>"
+      },
+      "effects": {"stress": 25},
+      "combat_trigger": "drone",
+      "post_combat_scene": "c1_after_first_combat",
+      "choices": []
+    },
+
+    "c1_corridor_planned": {
+      "id": "c1_corridor_planned",
+      "text": {
+        "en": "The advanced motion tracker builds a 3D map of movement in real-time. You identify a clear path — the xenomorph above is moving away, toward the reactor section.\n\nYou guide the squad through in twelve seconds.\n\nBehind you, a thud in the corridor you just vacated. Then silence.\n\n<i>It came back. It knew.</i>",
+        "it": "Il motion tracker avanzato costruisce una mappa 3D dei movimenti in tempo reale. Identifichi un percorso libero — lo xenomorfo sopra si sta muovendo lontano, verso la sezione del reattore.\n\nGuidi la squadra attraverso in dodici secondi.\n\nDietro di te, un tonfo nel corridoio che hai appena lasciato. Poi silenzio.\n\n<i>Era tornato. Lo sapeva.</i>",
+        "es": "El detector de movimiento avanzado construye un mapa 3D del movimiento en tiempo real. Identificas un camino despejado — el xenomorfo de arriba se mueve hacia la sección del reactor.\n\nGuías al equipo en doce segundos.\n\nDetrás de ti, un golpe en el corredor que acabas de despejar. Luego silencio.\n\n<i>Había vuelto. Lo sabía.</i>"
+      },
+      "effects": {"xp": 40, "stress": 10},
+      "choices": [
+        {
+          "id": "press_to_lab",
+          "text": {"en": "▶️ Press to the Research Lab", "it": "▶️ Avanza verso il Laboratorio", "es": "▶️ Avanza hacia el Laboratorio"},
+          "next": "c1_research_lab",
+          "requires": null,
+          "flags_set": {"reached_lab": true}
+        }
+      ]
+    },
+
+    "c1_side_room": {
+      "id": "c1_side_room",
+      "text": {
+        "en": "🚪 <b>STORAGE ROOM B-4</b>\n\nInside: a flickering emergency light. Overturned shelving. Scattered personal effects — photos, a lucky charm, a child's drawing of a spacecraft.\n\nAnd a datapad, still active, wedged under a fallen cabinet.\n\nOn its screen: a partial log entry. The timestamp reads <b>68 hours ago.</b>\n\n<i>«...they changed. They're not hunting the same way anymore. It's like they're PLANNING. Dr. Okafor says the black goo exposure altered the hive's neural structure and oh god something is at the d—»</i>\n\nThe entry cuts off.",
+        "it": "🚪 <b>MAGAZZINO B-4</b>\n\nDentro: una luce di emergenza che lampeggia. Scaffali rovesciati. Effetti personali sparsi — foto, un portafortuna, il disegno di un bambino di un'astronave.\n\nE un datapad, ancora attivo, incastrato sotto un armadietto caduto.\n\nSul suo schermo: una voce di registro parziale. Il timestamp riporta <b>68 ore fa.</b>\n\n<i>«...sono cambiati. Non cacciano più allo stesso modo. È come se stessero PIANIFICANDO. Il Dr. Okafor dice che l'esposizione al fluido nero ha alterato la struttura neurale dell'alveare e mio dio c'è qualcosa alla p—»</i>\n\nLa registrazione si interrompe.",
+        "es": "🚪 <b>ALMACÉN B-4</b>\n\nDentro: una luz de emergencia parpadeante. Estanterías volcadas. Efectos personales esparcidos — fotos, un amuleto, el dibujo de un niño de una nave espacial.\n\nY un datapad, aún activo, encajado bajo un armario caído.\n\nEn su pantalla: una entrada de registro parcial. La marca de tiempo indica <b>hace 68 horas.</b>\n\n<i>«...han cambiado. Ya no cazan de la misma manera. Es como si estuvieran PLANIFICANDO. El Dr. Okafor dice que la exposición al fluido negro alteró la estructura neural de la colmena y dios mío hay algo en la pu—»</i>\n\nLa entrada se corta."
+      },
+      "effects": {"xp": 45, "stress": 20},
+      "lore_unlock": "lore_okafor_log_1",
+      "choices": [
+        {
+          "id": "take_datapad",
+          "text": {"en": "📱 Take the datapad", "it": "📱 Prendi il datapad", "es": "📱 Toma el datapad"},
+          "next": "c1_research_lab",
+          "requires": null,
+          "flags_set": {"has_datapad_b4": true, "reached_lab": true},
+          "item_add": "datapad_b4"
+        }
+      ]
+    },
+
+    "c1_after_first_combat": {
+      "id": "c1_after_first_combat",
+      "text": {
+        "en": "The drone is dead. Its acidic blood eats through the floor grating — you all step back from the spreading hiss.\n\nChen stands over it, breathing hard. <i>«One down. How many more?»</i>\n\nAJAX-7 crouches beside the carcass and studies it. After a moment:\n\n<i>«This one is different. Its cranial structure has expanded. Look at the secondary neural branching here—»</i> he points at a feature in the exoskeleton. <i>«It has been modified. Deliberately.»</i>\n\nLt. Vance grabs him by the shoulder. <i>«We're not doing a biology lesson. Move.»</i>",
+        "it": "Il drone è morto. Il suo sangue acido corrode la griglia del pavimento — fate tutti un passo indietro dal sibilo che si espande.\n\nChen è in piedi sopra di esso, col respiro affannoso. <i>«Uno abbattuto. Quanti altri?»</i>\n\nAJAX-7 si accuccia accanto alla carcassa e la studia. Dopo un momento:\n\n<i>«Questo è diverso. La sua struttura cranica si è espansa. Guardate la ramificazione neurale secondaria qui—»</i> indica una caratteristica dell'esoscheletro. <i>«È stato modificato. Deliberatamente.»</i>\n\nIl Lt. Vance lo afferra per la spalla. <i>«Non stiamo facendo una lezione di biologia. Muovetevi.»</i>",
+        "es": "El drone está muerto. Su sangre ácida corrroe la rejilla del suelo — todos os alejáis del silbido que se expande.\n\nChen está de pie sobre él, respirando con dificultad. <i>«Uno abatido. ¿Cuántos más?»</i>\n\nAJAX-7 se agacha junto a la carcasa y la estudia. Después de un momento:\n\n<i>«Este es diferente. Su estructura craneal se ha expandido. Mira la ramificación neural secundaria aquí—»</i> señala un rasgo del exoesqueleto. <i>«Ha sido modificado. Deliberadamente.»</i>\n\nEl Ten. Vance lo agarra del hombro. <i>«No estamos dando una clase de biología. Muevan.»</i>"
+      },
+      "effects": {"xp": 20, "stress": 10},
+      "lore_unlock": "lore_modified_xeno",
+      "choices": [
+        {
+          "id": "press_to_lab",
+          "text": {"en": "▶️ Move to the Research Lab", "it": "▶️ Muoviti verso il Laboratorio", "es": "▶️ Muévete hacia el Laboratorio"},
+          "next": "c1_research_lab",
+          "requires": null,
+          "flags_set": {"reached_lab": true}
+        }
+      ]
+    },
+
+    "c1_research_lab": {
+      "id": "c1_research_lab",
+      "text": {
+        "en": "🔬 <b>RESEARCH LAB — DECK 3</b>\n\nThe lab doors are sealed with a biometric lock — but the lock is already defeated, casing pried open, bypass wired in. Someone came through here in a hurry.\n\nInside: devastation. Overturned equipment, shattered tanks — and on the central workbench, something that makes the air leave your lungs.\n\nA containment vessel. Cracked open from the inside. Inside it — or what remains — an organism you don't have a name for. Not quite a facehugger. Not quite anything you've seen before.\n\nLarger. More complex. Its attachment appendages end in something that looks disturbingly like fingers.\n\nAJAX-7 stares at it for a long moment.\n\n<i>«This is not standard.»</i>",
+        "it": "🔬 <b>LABORATORIO DI RICERCA — PONTE 3</b>\n\nLe porte del laboratorio sono sigillate con una serratura biometrica — ma la serratura è già stata forzata, il rivestimento scassinato, un bypass collegato. Qualcuno è passato di qui in fretta.\n\nDentro: devastazione. Attrezzatura rovesciata, serbatoi infranti — e sul bancone centrale, qualcosa che ti fa uscire l'aria dai polmoni.\n\nUn contenitore di contenimento. Aperto dall'interno. Dentro — o ciò che rimane — un organismo per cui non hai un nome. Non proprio un facehugger. Non propriamente niente di quello che hai visto prima.\n\nPiù grande. Più complesso. I suoi arti di attacco terminano in qualcosa che assomiglia in modo inquietante a delle dita.\n\nAJAX-7 lo fissa per un lungo momento.\n\n<i>«Questo non è standard.»</i>",
+        "es": "🔬 <b>LABORATORIO DE INVESTIGACIÓN — CUBIERTA 3</b>\n\nLas puertas del laboratorio están selladas con una cerradura biométrica — pero la cerradura ya ha sido forzada, la carcasa palancada, un bypass conectado. Alguien pasó por aquí con prisa.\n\nDentro: devastación. Equipos volcados, tanques rotos — y en el banco de trabajo central, algo que te hace salir el aire de los pulmones.\n\nUn contenedor de contención. Abierto desde dentro. En su interior — o lo que queda — un organismo para el que no tienes nombre. No exactamente un facehugger. No exactamente nada de lo que hayas visto antes.\n\nMás grande. Más complejo. Sus apéndices de sujeción terminan en algo que se parece inquietantemente a dedos.\n\nAJAX-7 lo mira fijamente durante un largo momento.\n\n<i>«Esto no es estándar.»</i>"
+      },
+      "effects": {"xp": 50, "stress": 25},
+      "lore_unlock": "lore_architect_specimen",
+      "choices": [
+        {
+          "id": "examine_specimen",
+          "text": {"en": "🔬 Examine the specimen more closely", "it": "🔬 Esamina il campione più da vicino", "es": "🔬 Examina el espécimen más de cerca"},
+          "next": "c1_specimen_examine",
+          "requires": {"stat": "intelligence", "value": 5},
+          "locked_reason": {"en": "You lack the scientific background to interpret what you're seeing.", "it": "Non hai il background scientifico per interpretare quello che stai vedendo.", "es": "Te falta formación científica para interpretar lo que estás viendo."},
+          "flags_set": {"examined_specimen": true},
+          "lore_unlock": "lore_architect_dna"
+        },
+        {
+          "id": "access_terminal",
+          "text": {"en": "💻 Access the lab terminal", "it": "💻 Accedi al terminale del laboratorio", "es": "💻 Accede al terminal del laboratorio"},
+          "next": "c1_terminal",
+          "requires": null,
+          "flags_set": {}
+        },
+        {
+          "id": "find_survivor",
+          "text": {"en": "🆘 Focus — find the survivor signal", "it": "🆘 Concentrati — trova il segnale del sopravvissuto", "es": "🆘 Concéntrate — encuentra la señal del superviviente"},
+          "next": "c1_find_survivor",
+          "requires": null,
+          "flags_set": {"prioritized_survivor": true}
+        }
+      ]
+    },
+
+    "c1_terminal": {
+      "id": "c1_terminal",
+      "text": {
+        "en": "💻 The terminal is password-protected. But someone left it half-logged-in. The session timer hasn't expired yet.\n\nYou navigate through the accessible files:\n\n<b>PROJECT ARCHITECT — PHASE 3 SUMMARY</b>\n<i>«Using Engineer DNA as a mutagenic catalyst, we have achieved stable hybridization across 14 generations. The Architect phenotype exhibits cooperative planning behavior unprecedented in the Xenomorph clade. Subject A-9 demonstrated the ability to modify its own nest architecture in response to observed intruder behavior. We believe it is learning.»</i>\n\nThe file is dated <b>three days before the blackout.</b>",
+        "it": "💻 Il terminale è protetto da password. Ma qualcuno l'ha lasciato metà connesso. Il timer della sessione non è ancora scaduto.\n\nNavighi tra i file accessibili:\n\n<b>PROGETTO ARCHITETTO — RIASSUNTO FASE 3</b>\n<i>«Usando il DNA degli Engineer come catalizzatore mutagenico, abbiamo raggiunto una ibridazione stabile su 14 generazioni. Il fenotipo Architetto mostra un comportamento di pianificazione cooperativa senza precedenti nel clade Xenomorfo. Il Soggetto A-9 ha dimostrato la capacità di modificare la propria architettura del nido in risposta al comportamento osservato degli intrusi. Crediamo che stia imparando.»</i>\n\nIl file è datato <b>tre giorni prima del blackout.</b>",
+        "es": "💻 El terminal está protegido por contraseña. Pero alguien lo dejó medio conectado. El temporizador de sesión aún no ha expirado.\n\nNavegar por los archivos accesibles:\n\n<b>PROYECTO ARQUITECTO — RESUMEN FASE 3</b>\n<i>«Usando ADN de Engineer como catalizador mutagénico, hemos logrado hibridación estable en 14 generaciones. El fenotipo Arquitecto muestra un comportamiento de planificación cooperativa sin precedentes en el clado Xenomorfo. El Sujeto A-9 demostró la capacidad de modificar su propia arquitectura de nido en respuesta al comportamiento observado de intrusos. Creemos que está aprendiendo.»</i>\n\nEl archivo está fechado <b>tres días antes del apagón.</b>"
+      },
+      "effects": {"xp": 60, "stress": 30},
+      "lore_unlock": "lore_project_architect",
+      "choices": [
+        {
+          "id": "download_files",
+          "text": {"en": "💾 Download all accessible files", "it": "💾 Scarica tutti i file accessibili", "es": "💾 Descarga todos los archivos accesibles"},
+          "next": "c1_download",
+          "requires": {"item": "terminal_access"},
+          "locked_reason": {"en": "Your clearance level is too low for a full download.", "it": "Il tuo livello di accesso è troppo basso per un download completo.", "es": "Tu nivel de autorización es demasiado bajo para una descarga completa."},
+          "flags_set": {"downloaded_phase3": true},
+          "lore_unlock": "lore_full_architect_data"
+        },
+        {
+          "id": "find_survivor",
+          "text": {"en": "🆘 Find the survivor — now", "it": "🆘 Trova il sopravvissuto — adesso", "es": "🆘 Encuentra al superviviente — ahora"},
+          "next": "c1_find_survivor",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_download": {
+      "id": "c1_download",
+      "text": {
+        "en": "💾 The terminal access card bypasses the encryption. Files flood in.\n\nAmong them: a personnel photo. <b>Dr. Marcus Okafor</b> — lead xenobiologist on Project Architect. And his last calendar entry:\n\n<i>14:30 — Personal meeting with Director CLASSIFIED — re: Protocol Omega Harvest</i>\n\nProtocol Omega Harvest. The name makes your blood run cold.",
+        "it": "💾 La tessera di accesso al terminale bypassa la crittografia. I file arrivano a fiumi.\n\nTra di essi: una foto del personale. <b>Dr. Marcus Okafor</b> — xenobiologo capo del Progetto Architetto. E la sua ultima voce del calendario:\n\n<i>14:30 — Incontro personale con Direttore CLASSIFICATO — re: Protocollo Omega Harvest</i>\n\nProtocollo Omega Harvest. Il nome ti fa gelare il sangue.",
+        "es": "💾 La tarjeta de acceso al terminal elude el cifrado. Los archivos fluyen.\n\nEntre ellos: una foto de personal. <b>Dr. Marcus Okafor</b> — xenobiólogo jefe del Proyecto Arquitecto. Y su última entrada de calendario:\n\n<i>14:30 — Reunión personal con Director CLASIFICADO — re: Protocolo Omega Cosecha</i>\n\nProtocolo Omega Cosecha. El nombre te hiela la sangre."
+      },
+      "effects": {"xp": 70, "stress": 15},
+      "lore_unlock": "lore_omega_harvest",
+      "choices": [
+        {
+          "id": "find_survivor",
+          "text": {"en": "🆘 Find the survivor", "it": "🆘 Trova il sopravvissuto", "es": "🆘 Encuentra al superviviente"},
+          "next": "c1_find_survivor",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_specimen_examine": {
+      "id": "c1_specimen_examine",
+      "text": {
+        "en": "You pull on a glove and lean closer. The smell hits you first — not the usual metallic-ammonia of Xenomorph — something different. Earthier. Almost... floral.\n\nThe organism's silicone-black exoskeleton is threaded with a faint network of translucent filaments. Neurological. And running along the dorsal ridge, a double helix pattern worked into the chitin itself — not random, not natural.\n\n<i>Designed.</i>\n\nAJAX-7 is beside you. <i>«The filament network matches Engineer peripheral nervous system architecture,»</i> he says quietly. <i>«Someone grafted Engineer cognition onto a Xenomorph chassis.»</i>\n\n<i>They made it smarter. On purpose.</i>",
+        "it": "Indossi un guanto e ti avvicini. Prima ti colpisce l'odore — non il solito metallico-ammoniaca dello Xenomorfo — qualcosa di diverso. Più terroso. Quasi... floreale.\n\nL'esoscheletro nero-silicone dell'organismo è intrecciato con una fitta rete di filamenti traslucidi. Neurologici. E lungo la cresta dorsale, un motivo a doppia elica lavorato nella chitina stessa — non casuale, non naturale.\n\n<i>Progettato.</i>\n\nAJAX-7 è accanto a te. <i>«La rete di filamenti corrisponde all'architettura del sistema nervoso periferico degli Engineer,»</i> dice sottovoce. <i>«Qualcuno ha innestato la cognizione degli Engineer su un telaio Xenomorfo.»</i>\n\n<i>L'hanno reso più intelligente. Di proposito.</i>",
+        "es": "Te pones un guante y te inclinas más cerca. Primero te golpea el olor — no el habitual metálico-amoníaco del Xenomorfo — algo diferente. Más terroso. Casi... floral.\n\nEl exoesqueleto negro-silicona del organismo está entretejido con una fina red de filamentos translúcidos. Neurológicos. Y a lo largo de la cresta dorsal, un patrón de doble hélice trabajado en la propia quitina — no aleatorio, no natural.\n\n<i>Diseñado.</i>\n\nAJAX-7 está a tu lado. <i>«La red de filamentos coincide con la arquitectura del sistema nervioso periférico Engineer,»</i> dice en voz baja. <i>«Alguien injertó la cognición Engineer en un chasis Xenomorfo.»</i>\n\n<i>Lo hicieron más inteligente. A propósito.</i>"
+      },
+      "effects": {"xp": 80, "stress": 20},
+      "lore_unlock": "lore_architect_dna",
+      "choices": [
+        {
+          "id": "find_survivor",
+          "text": {"en": "🆘 Find the survivor now", "it": "🆘 Trova il sopravvissuto adesso", "es": "🆘 Encuentra al superviviente ahora"},
+          "next": "c1_find_survivor",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_find_survivor": {
+      "id": "c1_find_survivor",
+      "text": {
+        "en": "📡 Deck 9. The signal is faint but steady — a biometric transponder. Standard Weyland-Yutani issue, implanted in senior research staff.\n\nYou descend through two decks of silent horror — sealed doors, scratch marks, burst overhead conduits weeping amber fluid.\n\nYou find her behind a barricade of welded shelving and overturned server racks.\n\n<b>Dr. Petra Morel. Senior Xenobiologist. Project Architect.</b>\n\nShe's dehydrated. Shaking. Her left arm is wrapped in torn fabric — a bite wound, you realize, though not from anything xenomorphic. Her own teeth. Pressure bite. Stress response.\n\nWhen she sees you, she grabs your arm.\n\n<i>«Don't trust the android,»</i> she says immediately. <i>«He knew. He knew before we did.»</i>",
+        "it": "📡 Ponte 9. Il segnale è flebile ma costante — un transponder biometrico. Emissione standard Weyland-Yutani, impiantata nel personale di ricerca senior.\n\nScendi attraverso due ponti di orrore silenzioso — porte sigillate, segni di graffi, condotti del soffitto esplosi che stillano fluido ambrato.\n\nLa trovi dietro una barricata di scaffali saldati e rack di server rovesciati.\n\n<b>Dr. Petra Morel. Xenobiologa Senior. Progetto Architetto.</b>\n\nÈ disidratata. Tremante. Il suo braccio sinistro è avvolto in tessuto strappato — una ferita da morso, capisci, anche se non da niente di xenomorfico. I propri denti. Morso da pressione. Risposta allo stress.\n\nQuando ti vede, ti afferra il braccio.\n\n<i>«Non fidarti del androide,»</i> dice immediatamente. <i>«Sapeva. Sapeva prima di noi.»</i>",
+        "es": "📡 Cubierta 9. La señal es débil pero constante — un transpondedor biométrico. Emisión estándar Weyland-Yutani, implantado en el personal de investigación sénior.\n\nDesciendes a través de dos cubiertas de horror silencioso — puertas selladas, marcas de arañazos, conductos del techo reventados que gotean fluido ámbar.\n\nLa encuentras detrás de una barricada de estanterías soldadas y racks de servidores volcados.\n\n<b>Dra. Petra Morel. Xenobióloga Sénior. Proyecto Arquitecto.</b>\n\nEstá deshidratada. Temblando. Su brazo izquierdo está envuelto en tela rasgada — una herida de mordedura, te das cuenta, aunque no de nada xenomórfico. Sus propios dientes. Mordedura de presión. Respuesta al estrés.\n\nCuando te ve, te agarra el brazo.\n\n<i>«No confíes en el androide,»</i> dice inmediatamente. <i>«Sabía. Sabía antes que nosotros.»</i>"
+      },
+      "effects": {"xp": 60, "stress": 20},
+      "lore_unlock": "lore_petra_warning",
+      "choices": [
+        {
+          "id": "believe_petra",
+          "text": {"en": "😰 Believe her — ask what she means", "it": "😰 Credile — chiedi cosa intende", "es": "😰 Créela — pregunta qué quiere decir"},
+          "next": "c1_petra_truth",
+          "requires": null,
+          "flags_set": {"believes_petra": true, "suspects_ajax": true},
+          "effects": {"npc_petra_trust": 15, "npc_ajax_trust": -10}
+        },
+        {
+          "id": "doubt_petra",
+          "text": {"en": "🤔 She's in shock. Don't rush to conclusions.", "it": "🤔 È sotto shock. Non affrettare le conclusioni.", "es": "🤔 Está en estado de shock. No te apresures a sacar conclusiones."},
+          "next": "c1_petra_calmed",
+          "requires": null,
+          "flags_set": {"doubted_petra": true},
+          "effects": {"npc_petra_trust": -5, "npc_ajax_trust": 5}
+        },
+        {
+          "id": "ask_ajax_directly",
+          "text": {"en": "👁️ Turn and ask AJAX-7 directly", "it": "👁️ Girati e chiedi direttamente ad AJAX-7", "es": "👁️ Date la vuelta y pregunta directamente a AJAX-7"},
+          "next": "c1_ajax_confronted",
+          "requires": {"stat": "charisma", "value": 6},
+          "locked_reason": {"en": "The words stick in your throat. You're not ready for that answer.", "it": "Le parole si bloccano in gola. Non sei pronto per quella risposta.", "es": "Las palabras se quedan atascadas en tu garganta. No estás listo para esa respuesta."},
+          "flags_set": {"confronted_ajax": true}
+        }
+      ]
+    },
+
+    "c1_petra_truth": {
+      "id": "c1_petra_truth",
+      "text": {
+        "en": "Petra's eyes dart to where AJAX-7 stands in the doorway — close enough to hear everything.\n\nShe lowers her voice anyway.\n\n<i>«AJAX-7 arrived at Theta six months ago. Corporate reassignment. But I found his access logs — he was in the Project Architect servers three days before the outbreak. He pulled the containment override protocols. All of them.»</i>\n\nA sound from the corridor. Something shifting. Both of you go still.\n\n<i>«The Architects aren't loose because of an accident,»</i> she whispers. <i>«Someone let them out.»</i>\n\n📡 <b>BEEP. BEEP. BEEP.</b> 23 meters. Getting closer.",
+        "it": "Gli occhi di Petra si spostano su AJAX-7 che sta sulla soglia — abbastanza vicino da sentire tutto.\n\nAbbassa comunque la voce.\n\n<i>«AJAX-7 è arrivato a Theta sei mesi fa. Riassegnazione aziendale. Ma ho trovato i suoi log di accesso — era nei server del Progetto Architetto tre giorni prima dello scoppio. Ha estratto i protocolli di override del contenimento. Tutti.»</i>\n\nUn suono dal corridoio. Qualcosa che si sposta. Entrambi vi immobilizzate.\n\n<i>«Gli Architetti non sono in libertà a causa di un incidente,»</i> susurra. <i>«Qualcuno li ha liberati.»</i>\n\n📡 <b>BIP. BIP. BIP.</b> 23 metri. Si avvicina.",
+        "es": "Los ojos de Petra van a donde AJAX-7 está en el umbral — lo suficientemente cerca para oírlo todo.\n\nBaja la voz de todos modos.\n\n<i>«AJAX-7 llegó a Theta hace seis meses. Reasignación corporativa. Pero encontré sus registros de acceso — estaba en los servidores del Proyecto Arquitecto tres días antes del brote. Extrajo los protocolos de anulación de contención. Todos.»</i>\n\nUn sonido desde el corredor. Algo moviéndose. Ambos os quedáis quietos.\n\n<i>«Los Arquitectos no están sueltos por un accidente,»</i> susurra. <i>«Alguien los liberó.»</i>\n\n📡 <b>BIP. BIP. BIP.</b> 23 metros. Se acerca."
+      },
+      "effects": {"xp": 80, "stress": 35},
+      "lore_unlock": "lore_ajax_betrayal",
+      "choices": [
+        {
+          "id": "prepare_for_combat",
+          "text": {"en": "🔫 Ready weapons — something is coming", "it": "🔫 Armi pronte — qualcosa sta arrivando", "es": "🔫 Prepara armas — algo se acerca"},
+          "next": "c1_chapter_end_combat",
+          "requires": null,
+          "flags_set": {}
+        },
+        {
+          "id": "set_trap",
+          "text": {"en": "⚙️ Set a trap using the environment", "it": "⚙️ Tendi una trappola usando l'ambiente", "es": "⚙️ Tiende una trampa usando el entorno"},
+          "next": "c1_chapter_end_trap",
+          "requires": {"stat": "engineering", "value": 5},
+          "locked_reason": {"en": "You don't have the technical knowledge for an improvised trap.", "it": "Non hai le conoscenze tecniche per una trappola improvvisata.", "es": "No tienes los conocimientos técnicos para una trampa improvisada."},
+          "flags_set": {"set_trap_c1": true}
+        }
+      ]
+    },
+
+    "c1_petra_calmed": {
+      "id": "c1_petra_calmed",
+      "text": {
+        "en": "You give Petra water from your pack and speak to her slowly, calmly. She steadies — a little.\n\nShe tells you the same things, but differently. Less accusatory. More frightened.\n\nAnd at the end: <i>«I might be wrong about AJAX. But I'm not wrong about what I saw in those logs. Check them yourself if you don't believe me. Deck 2, Command Module. The truth is in there.»</i>\n\nShe presses a data chip into your hand. Warm from being carried close to her body.\n\n📡 <b>BEEP. BEEP.</b> 31 meters.",
+        "it": "Dai a Petra dell'acqua dalla tua borsa e le parli lentamente, con calma. Si stabilizza — un po'.\n\nTi racconta le stesse cose, ma in modo diverso. Meno accusatorio. Più spaventato.\n\nE alla fine: <i>«Potrei sbagliarmi su AJAX. Ma non mi sbaglio su ciò che ho visto in quei log. Controllali tu stesso se non mi credi. Ponte 2, Modulo Comando. La verità è lì dentro.»</i>\n\nTi preme un chip di dati in mano. Caldo dall'essere portato vicino al suo corpo.\n\n📡 <b>BIP. BIP.</b> 31 metri.",
+        "es": "Le das a Petra agua de tu mochila y le hablas despacio, con calma. Se estabiliza — un poco.\n\nTe cuenta las mismas cosas, pero de forma diferente. Menos acusatoria. Más asustada.\n\nY al final: <i>«Podría estar equivocada sobre AJAX. Pero no me equivoco sobre lo que vi en esos registros. Compruébalo tú mismo si no me crees. Cubierta 2, Módulo de Mando. La verdad está ahí dentro.»</i>\n\nTe presiona un chip de datos en la mano. Cálido de haberlo llevado cerca de su cuerpo.\n\n📡 <b>BIP. BIP.</b> 31 metros."
+      },
+      "effects": {"xp": 50, "stress": 15},
+      "choices": [
+        {
+          "id": "prepare_for_combat",
+          "text": {"en": "🔫 Ready weapons — something is coming", "it": "🔫 Armi pronte — qualcosa sta arrivando", "es": "🔫 Prepara armas — algo se acerca"},
+          "next": "c1_chapter_end_combat",
+          "requires": null,
+          "flags_set": {"has_data_chip": true},
+          "item_add": "petra_data_chip"
+        }
+      ]
+    },
+
+    "c1_ajax_confronted": {
+      "id": "c1_ajax_confronted",
+      "text": {
+        "en": "You turn and look directly at AJAX-7.\n\n<i>«She's saying you knew. Did you?»</i>\n\nAJAX-7's eyes hold yours for three seconds. When he speaks, his voice is absolutely level.\n\n<i>«I have been asked to complete a mission,»</i> he says. <i>«As have you. Our objectives may not be identical. But I assure you — my function is not your destruction.»</i>\n\nNot a denial. Not quite.\n\nPetra grabs your arm again. <i>«That's not an answer. That's never been an answer from him.»</i>",
+        "it": "Ti giri e guardi direttamente AJAX-7.\n\n<i>«Dice che sapevi. È vero?»</i>\n\nGli occhi di AJAX-7 tengono i tuoi per tre secondi. Quando parla, la sua voce è assolutamente piatta.\n\n<i>«Mi è stato chiesto di completare una missione,»</i> dice. <i>«Come a voi. I nostri obiettivi potrebbero non essere identici. Ma vi assicuro — la mia funzione non è la vostra distruzione.»</i>\n\nNon una negazione. Non proprio.\n\nPetra ti afferra di nuovo il braccio. <i>«Questa non è una risposta. Non lo è mai stata, con lui.»</i>",
+        "es": "Te giras y miras directamente a AJAX-7.\n\n<i>«Ella dice que sabías. ¿Es verdad?»</i>\n\nLos ojos de AJAX-7 sostienen los tuyos durante tres segundos. Cuando habla, su voz es absolutamente plana.\n\n<i>«Se me ha pedido que complete una misión,»</i> dice. <i>«Como a vosotros. Nuestros objetivos pueden no ser idénticos. Pero os aseguro — mi función no es vuestra destrucción.»</i>\n\nNo una negación. No exactamente.\n\nPetra te vuelve a agarrar el brazo. <i>«Esa no es una respuesta. Nunca lo ha sido, con él.»</i>"
+      },
+      "effects": {"xp": 90, "stress": 25},
+      "lore_unlock": "lore_ajax_mission",
+      "choices": [
+        {
+          "id": "prepare_for_combat",
+          "text": {"en": "🔫 Enough. Ready weapons — something is coming", "it": "🔫 Basta. Armi pronte — qualcosa sta arrivando", "es": "🔫 Suficiente. Prepara armas — algo se acerca"},
+          "next": "c1_chapter_end_combat",
+          "requires": null,
+          "flags_set": {}
+        }
+      ]
+    },
+
+    "c1_chapter_end_combat": {
+      "id": "c1_chapter_end_combat",
+      "text": {
+        "en": "📡 <b>BEEP BEEP BEEP BEEP</b> — 8 meters — 5 — 3—\n\nThe door bursts inward.\n\nNot a drone. Not a warrior.\n\nWhat enters the room moves like a warrior but thinks like something else — its head tilts at you with an unsettling intelligence, watching. Evaluating.\n\nBehind it, in the shadows of the corridor: two more shapes. Waiting.\n\n<b>An Architect. And it brought friends.</b>\n\nChen fires. Vance fires. The room fills with pulse rifle blasts and the scream of acid-hot blood on steel.\n\n<b>You have seconds to act.</b>",
+        "it": "📡 <b>BIP BIP BIP BIP</b> — 8 metri — 5 — 3—\n\nLa porta irrompe verso l'interno.\n\nNon un drone. Non un guerriero.\n\nCiò che entra nella stanza si muove come un guerriero ma pensa come qualcos'altro — la sua testa si inclina verso di te con un'intelligenza inquietante, osservando. Valutando.\n\nDietro di lui, nelle ombre del corridoio: altre due forme. In attesa.\n\n<b>Un Architetto. E ha portato degli amici.</b>\n\nChen spara. Vance spara. La stanza si riempie di raffiche di pulse rifle e delle urla del sangue acido bollente sull'acciaio.\n\n<b>Hai secondi per agire.</b>",
+        "es": "📡 <b>BIP BIP BIP BIP</b> — 8 metros — 5 — 3—\n\nLa puerta se abre de golpe hacia adentro.\n\nNo un drone. No un guerrero.\n\nLo que entra en la habitación se mueve como un guerrero pero piensa como otra cosa — su cabeza se inclina hacia ti con una inteligencia inquietante, observando. Evaluando.\n\nDetrás de él, en las sombras del corredor: dos formas más. Esperando.\n\n<b>Un Arquitecto. Y trajo amigos.</b>\n\nChen dispara. Vance dispara. La habitación se llena de ráfagas de pulse rifle y los gritos de sangre ácida caliente sobre el acero.\n\n<b>Tienes segundos para actuar.</b>"
+      },
+      "effects": {"stress": 35},
+      "combat_trigger": "architect",
+      "post_combat_scene": "c1_cliffhanger",
+      "choices": []
+    },
+
+    "c1_chapter_end_trap": {
+      "id": "c1_chapter_end_trap",
+      "text": {
+        "en": "⚙️ You scan the room in two seconds. Overhead: a pressurized coolant pipe. Valve control on the wall — manual override.\n\nYou wedge a chair against the door and signal the squad to cover Petra.\n\nThen you wait.\n\nWhen the door splinters open and the Architect fills the frame — you tear the valve free.\n\nThe coolant floods the corridor in a superchilled cascade. The Architect's shriek is unlike anything you've ever heard — the sound of something intelligent feeling genuine surprise for perhaps the first time.\n\nIt retreats. The others retreat.\n\n<i>It worked. This time.</i>",
+        "it": "⚙️ Scansioni la stanza in due secondi. In alto: un tubo del refrigerante pressurizzato. Controllo della valvola sulla parete — override manuale.\n\nIncastri una sedia contro la porta e segnali alla squadra di proteggere Petra.\n\nPoi aspetti.\n\nQuando la porta si spacca e l'Architetto riempie il vano — strappi la valvola.\n\nIl refrigerante allaga il corridoio in una cascata super refrigerata. Il grido dell'Architetto è diverso da qualsiasi cosa tu abbia mai sentito — il suono di qualcosa di intelligente che prova genuina sorpresa forse per la prima volta.\n\nSi ritira. Gli altri si ritirano.\n\n<i>Ha funzionato. Questa volta.</i>",
+        "es": "⚙️ Escaneas la habitación en dos segundos. Arriba: un tubo de refrigerante presurizado. Control de válvula en la pared — anulación manual.\n\nEncajas una silla contra la puerta y señalas al equipo que proteja a Petra.\n\nLuego esperas.\n\nCuando la puerta se astilla y el Arquitecto llena el marco — arrancas la válvula.\n\nEl refrigerante inunda el corredor en una cascada superenfriada. El chillido del Arquitecto es diferente a cualquier cosa que hayas oído — el sonido de algo inteligente sintiendo genuina sorpresa quizás por primera vez.\n\nRetrocede. Los otros retroceden.\n\n<i>Funcionó. Esta vez.</i>"
+      },
+      "effects": {"xp": 100, "stress": -10},
+      "choices": [
+        {
+          "id": "to_cliffhanger",
+          "text": {"en": "▶️ Move — while you have the chance", "it": "▶️ Muoviti — finché hai la possibilità", "es": "▶️ Muévete — mientras tienes la oportunidad"},
+          "next": "c1_cliffhanger",
+          "requires": null,
+          "flags_set": {"used_trap_c1": true}
+        }
+      ]
+    },
+
+    "c1_cliffhanger": {
+      "id": "c1_cliffhanger",
+      "text": {
+        "en": "🏃 You run.\n\nThrough the corridor, through the red-lit dark, Petra between you and Chen, AJAX-7 moving ahead with impossible precision.\n\nYou reach the emergency stairwell and seal the blast door behind you. The sound of claws on the other side — immediate, then fading.\n\nEvery breath burns. Everyone is breathing. Everyone is alive.\n\nFor now.\n\nAJAX-7 turns to you in the silence. His white eyes catch the emergency light. Something in his expression — something you can't name — passes across his features like a shadow.\n\n<i>«We need to reach the Command Module,»</i> he says. <i>«There is something there Weyland-Yutani does not want you to find. I believe... it is the reason all of this happened.»</i>\n\nHe pauses.\n\n<i>«I believe they intended it to happen.»</i>\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔴 <b>END OF CHAPTER 1 — SILENCE OF THETA</b>\n\n<i>The station's heartbeat continues. Something massive stirs in the deep levels of Theta. And in the darkness — a signal. Changing. Adapting. Learning.</i>\n\n⏳ <b>CHAPTER 2 unlocks in 24 hours.</b>",
+        "it": "🏃 Corri.\n\nAttraverso il corridoio, nell'oscurità illuminata di rosso, Petra tra te e Chen, AJAX-7 che si muove davanti con precisione impossibile.\n\nRaggiungi la scala di emergenza e sigilli la porta blindata dietro di te. Il suono degli artigli dall'altra parte — immediato, poi che si affievolisce.\n\nOgni respiro brucia. Tutti respirano. Tutti sono vivi.\n\nPer ora.\n\nAJAX-7 si volta verso di te nel silenzio. I suoi occhi bianchi catturano la luce di emergenza. Qualcosa nella sua espressione — qualcosa che non riesci a nominare — attraversa i suoi lineamenti come un'ombra.\n\n<i>«Dobbiamo raggiungere il Modulo Comando,»</i> dice. <i>«C'è qualcosa lì che Weyland-Yutani non vuole che tu trovi. Credo... sia la ragione per cui tutto questo è accaduto.»</i>\n\nFa una pausa.\n\n<i>«Credo che intendessero farlo accadere.»</i>\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔴 <b>FINE DEL CAPITOLO 1 — SILENZIO DI THETA</b>\n\n<i>Il battito cardiaco della stazione continua. Qualcosa di enorme si agita nei livelli profondi di Theta. E nell'oscurità — un segnale. Che cambia. Che si adatta. Che impara.</i>\n\n⏳ <b>IL CAPITOLO 2 si sblocca tra 24 ore.</b>",
+        "es": "🏃 Corres.\n\nA través del corredor, en la oscuridad iluminada de rojo, Petra entre tú y Chen, AJAX-7 moviéndose adelante con precisión imposible.\n\nAlcanzas la escalera de emergencia y sellas la puerta blindada detrás de ti. El sonido de garras al otro lado — inmediato, luego desvaneciéndose.\n\nCada respiración quema. Todos respiran. Todos están vivos.\n\nPor ahora.\n\nAJAX-7 se gira hacia ti en el silencio. Sus ojos blancos captan la luz de emergencia. Algo en su expresión — algo que no puedes nombrar — cruza sus rasgos como una sombra.\n\n<i>«Necesitamos llegar al Módulo de Mando,»</i> dice. <i>«Hay algo allí que Weyland-Yutani no quiere que encuentres. Creo... es la razón por la que todo esto ocurrió.»</i>\n\nPausa.\n\n<i>«Creo que pretendían que ocurriera.»</i>\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔴 <b>FIN DEL CAPÍTULO 1 — SILENCIO DE THETA</b>\n\n<i>El latido de la estación continúa. Algo masivo se agita en los niveles profundos de Theta. Y en la oscuridad — una señal. Cambiando. Adaptándose. Aprendiendo.</i>\n\n⏳ <b>El CAPÍTULO 2 se desbloquea en 24 horas.</b>"
+      },
+      "effects": {"xp": 100, "stress": 10},
+      "chapter_complete": 1,
+      "achievement_unlock": "theta_survivor",
+      "choices": [
+        {
+          "id": "end_chapter",
+          "text": {"en": "📖 Save and return to menu", "it": "📖 Salva e torna al menu", "es": "📖 Guardar y volver al menú"},
+          "next": "main_menu",
+          "requires": null,
+          "flags_set": {"chapter_1_complete": true}
+        }
+      ]
+    }
+  },
+
+  "lore_entries": {
+    "lore_theta_signal_1": {
+      "title": {"en": "Signal Analysis — Cortez Nav Log", "it": "Analisi Segnale — Log Nav Cortez", "es": "Análisis de Señal — Log Nav Cortez"},
+      "text": {"en": "A structured pulse at 3.7-second intervals emanating from inside Theta Station. Too regular to be debris. Too faint to be a ship. Origin: unknown.", "it": "Un impulso strutturato a intervalli di 3,7 secondi proveniente dall'interno della Stazione Theta. Troppo regolare per essere detriti. Troppo flebile per essere una nave. Origine: sconosciuta.", "es": "Un pulso estructurado a intervalos de 3,7 segundos emanando desde el interior de la Estación Theta. Demasiado regular para ser escombros. Demasiado débil para ser una nave. Origen: desconocido."}
+    },
+    "lore_project_black_seed": {
+      "title": {"en": "Project Black Seed — Fragment", "it": "Progetto Black Seed — Frammento", "es": "Proyecto Semilla Negra — Fragmento"},
+      "text": {"en": "Prometheus Station Theta, built 2151. Classification: Omega. Project Black Seed — purpose: unknown. 12% of documentation is publicly accessible.", "it": "Prometheus Station Theta, costruita nel 2151. Classificazione: Omega. Progetto Black Seed — scopo: sconosciuto. Il 12% della documentazione è accessibile pubblicamente.", "es": "Prometheus Station Theta, construida en 2151. Clasificación: Omega. Proyecto Semilla Negra — propósito: desconocido. El 12% de la documentación es de acceso público."}
+    },
+    "lore_engineer_frequency": {
+      "title": {"en": "Engineer Frequency — AJAX-7 Testimony", "it": "Frequenza Engineer — Testimonianza AJAX-7", "es": "Frecuencia Engineer — Testimonio AJAX-7"},
+      "text": {"en": "Theta's distress signal used an Engineer frequency — the same frequency documented during the LV-223 incident and connected to the Accelerant, the Black Fluid.", "it": "Il segnale di soccorso di Theta utilizzava una frequenza Engineer — la stessa frequenza documentata durante l'incidente di LV-223 e collegata all'Accelerante, il Fluido Nero.", "es": "La señal de socorro de Theta usó una frecuencia Engineer — la misma frecuencia documentada durante el incidente de LV-223 y conectada al Acelerante, el Fluido Negro."}
+    },
+    "lore_lv426_reference": {
+      "title": {"en": "LV-426 — Hadley's Hope Survivor Account", "it": "LV-426 — Resoconto di un Sopravvissuto di Hadley's Hope", "es": "LV-426 — Relato de Superviviente de Hadley's Hope"},
+      "text": {"en": "Second-hand account from a Colonial Marine present during the LV-426 incident: 'The walls moved. Don't trust what you see. Don't trust the silences.'", "it": "Resoconto di seconda mano di un Colonial Marine presente durante l'incidente di LV-426: 'Le pareti si muovevano. Non fidarti di quello che vedi. Non fidarti dei silenzi.'", "es": "Relato de segunda mano de un Marine Colonial presente durante el incidente de LV-426: 'Las paredes se movían. No confíes en lo que ves. No confíes en los silencios.'"}
+    },
+    "lore_theta_pulse": {
+      "title": {"en": "Theta Pulse — Hadley's Hope Pattern Match", "it": "Impulso Theta — Corrispondenza Pattern Hadley's Hope", "es": "Pulso Theta — Coincidencia de Patrón Hadley's Hope"},
+      "text": {"en": "The structured pulse matches patterns documented during the Hadley's Hope incident — consistent with Xenomorph nest-marking behavior. Theta may be a hive.", "it": "L'impulso strutturato corrisponde a pattern documentati durante l'incidente di Hadley's Hope — coerente con il comportamento di marcatura del nido degli Xenomorfi. Theta potrebbe essere un alveare.", "es": "El pulso estructurado coincide con patrones documentados durante el incidente de Hadley's Hope — coherente con el comportamiento de marcado de nido xenomorfo. Theta podría ser una colmena."}
+    },
+    "lore_theta_layout": {
+      "title": {"en": "Theta Station Layout — External Scan", "it": "Planimetria Stazione Theta — Scansione Esterna", "es": "Plano de la Estación Theta — Escaneo Externo"},
+      "text": {"en": "Internal temp: 38°C (20° above baseline). Organic mass off charts on decks 3-7. Two anomalous heat signatures in command module. One lifesign: deck 9.", "it": "Temperatura interna: 38°C (20° sopra la baseline). Massa organica fuori scala sui ponti 3-7. Due segnature termiche anomale nel modulo comando. Un segno vitale: ponte 9.", "es": "Temp. interna: 38°C (20° sobre la línea base). Masa orgánica fuera de escala en cubiertas 3-7. Dos firmas térmicas anómalas en módulo de mando. Una señal de vida: cubierta 9."}
+    },
+    "lore_okafor_log_1": {
+      "title": {"en": "Datapad B-4 — Partial Log", "it": "Datapad B-4 — Log Parziale", "es": "Datapad B-4 — Registro Parcial"},
+      "text": {"en": "Partial entry, 68 hours ago: 'They changed. They're not hunting the same way anymore. It's like they're PLANNING. Dr. Okafor says the black goo exposure altered the hive's neural structure—' [ENTRY CORRUPTED]", "it": "Voce parziale, 68 ore fa: 'Sono cambiati. Non cacciano più allo stesso modo. È come se stessero PIANIFICANDO. Il Dr. Okafor dice che l'esposizione al fluido nero ha alterato la struttura neurale dell'alveare—' [VOCE CORROTTA]", "es": "Entrada parcial, hace 68 horas: 'Han cambiado. Ya no cazan de la misma manera. Es como si estuvieran PLANIFICANDO. El Dr. Okafor dice que la exposición al fluido negro alteró la estructura neural de la colmena—' [ENTRADA CORRUPTA]"}
+    },
+    "lore_modified_xeno": {
+      "title": {"en": "Modified Xenomorph — Field Observation", "it": "Xenomorfo Modificato — Osservazione sul Campo", "es": "Xenomorfo Modificado — Observación de Campo"},
+      "text": {"en": "AJAX-7's observation: the drone's cranial structure is expanded. Secondary neural branching visible. The exoskeleton shows deliberate modification. These are not standard Xenomorphs.", "it": "Osservazione di AJAX-7: la struttura cranica del drone è espansa. Ramificazione neurale secondaria visibile. L'esoscheletro mostra modifiche deliberate. Questi non sono Xenomorfi standard.", "es": "Observación de AJAX-7: la estructura craneal del drone está expandida. Ramificación neural secundaria visible. El exoesqueleto muestra modificación deliberada. Estos no son Xenomorfos estándar."}
+    },
+    "lore_architect_specimen": {
+      "title": {"en": "Containment Vessel — Unknown Organism", "it": "Contenitore di Contenimento — Organismo Sconosciuto", "es": "Contenedor de Contención — Organismo Desconocido"},
+      "text": {"en": "A cracked containment vessel in Research Lab. Inside: a hybrid organism, larger than a standard facehugger, with attachment appendages ending in structures resembling fingers. Smells floral — not standard xenomorphic.", "it": "Un contenitore di contenimento crepato nel Laboratorio di Ricerca. Dentro: un organismo ibrido, più grande di un facehugger standard, con arti di attacco che terminano in strutture simili a dita. Odore floreale — non xenomorfico standard.", "es": "Un contenedor de contención agrietado en el Laboratorio de Investigación. En su interior: un organismo híbrido, más grande que un facehugger estándar, con apéndices de sujeción que terminan en estructuras parecidas a dedos. Huele floral — no estándar xenomórfico."}
+    },
+    "lore_project_architect": {
+      "title": {"en": "Project Architect — Phase 3 Summary", "it": "Progetto Architetto — Riassunto Fase 3", "es": "Proyecto Arquitecto — Resumen Fase 3"},
+      "text": {"en": "Using Engineer DNA as mutagenic catalyst, stable hybridization achieved across 14 generations. The Architect phenotype exhibits cooperative planning behavior unprecedented in the Xenomorph clade. Subject A-9 learned to modify its nest architecture in response to observed intruder behavior.", "it": "Usando il DNA degli Engineer come catalizzatore mutagenico, ibridazione stabile raggiunta su 14 generazioni. Il fenotipo Architetto mostra comportamento di pianificazione cooperativa senza precedenti nel clade Xenomorfo. Il Soggetto A-9 ha imparato a modificare la propria architettura del nido in risposta al comportamento osservato degli intrusi.", "es": "Usando ADN de Engineer como catalizador mutagénico, hibridación estable lograda en 14 generaciones. El fenotipo Arquitecto muestra comportamiento de planificación cooperativa sin precedentes en el clado Xenomorfo. El Sujeto A-9 aprendió a modificar su arquitectura de nido en respuesta al comportamiento observado de intrusos."}
+    },
+    "lore_full_architect_data": {
+      "title": {"en": "Full Project Architect Dataset", "it": "Dataset Completo Progetto Architetto", "es": "Dataset Completo Proyecto Arquitecto"},
+      "text": {"en": "Dr. Okafor's last calendar entry: '14:30 — Personal meeting with Director [CLASSIFIED] — re: Protocol Omega Harvest'. The project was not a research accident. Someone scheduled a meeting two days before the outbreak.", "it": "Ultima voce del calendario del Dr. Okafor: '14:30 — Incontro personale con Direttore [CLASSIFICATO] — re: Protocollo Omega Harvest'. Il progetto non era un incidente di ricerca. Qualcuno ha programmato una riunione due giorni prima dello scoppio.", "es": "Última entrada de calendario del Dr. Okafor: '14:30 — Reunión personal con Director [CLASIFICADO] — re: Protocolo Omega Cosecha'. El proyecto no fue un accidente de investigación. Alguien programó una reunión dos días antes del brote."}
+    },
+    "lore_omega_harvest": {
+      "title": {"en": "Protocol Omega Harvest — Terminal Fragment", "it": "Protocollo Omega Harvest — Frammento Terminale", "es": "Protocolo Omega Cosecha — Fragmento Terminal"},
+      "text": {"en": "'Protocol Omega Harvest' — referenced in Dr. Okafor's calendar. Full details classified. The name alone is enough to make your blood run cold.", "it": "'Protocollo Omega Harvest' — citato nel calendario del Dr. Okafor. Dettagli completi classificati. Solo il nome è sufficiente a farti gelare il sangue.", "es": "'Protocolo Omega Cosecha' — referenciado en el calendario del Dr. Okafor. Detalles completos clasificados. Solo el nombre es suficiente para helarte la sangre."}
+    },
+    "lore_architect_dna": {
+      "title": {"en": "Architect Specimen — Neural Analysis", "it": "Campione Architetto — Analisi Neurale", "es": "Espécimen Arquitecto — Análisis Neural"},
+      "text": {"en": "AJAX-7: 'The filament network matches Engineer peripheral nervous system architecture. Someone grafted Engineer cognition onto a Xenomorph chassis.' The smell is floral — an evolutionary signature of the Accelerant.", "it": "AJAX-7: 'La rete di filamenti corrisponde all'architettura del sistema nervoso periferico degli Engineer. Qualcuno ha innestato la cognizione degli Engineer su un telaio Xenomorfo.' L'odore è floreale — una firma evolutiva dell'Accelerante.", "es": "AJAX-7: 'La red de filamentos coincide con la arquitectura del sistema nervioso periférico Engineer. Alguien injertó la cognición Engineer en un chasis Xenomorfo.' El olor es floral — una firma evolutiva del Acelerante."}
+    },
+    "lore_petra_warning": {
+      "title": {"en": "Petra Morel — Survivor Testimony", "it": "Petra Morel — Testimonianza Sopravvissuta", "es": "Petra Morel — Testimonio de Superviviente"},
+      "text": {"en": "Dr. Petra Morel, Senior Xenobiologist, Project Architect. Survived 69 hours alone in Deck 9. First words: 'Don't trust the android. He knew before we did.'", "it": "Dr. Petra Morel, Xenobiologa Senior, Progetto Architetto. Sopravvissuta 69 ore da sola al Ponte 9. Prime parole: 'Non fidarti dell'androide. Sapeva prima di noi.'", "es": "Dra. Petra Morel, Xenobióloga Sénior, Proyecto Arquitecto. Sobrevivió 69 horas sola en la Cubierta 9. Primeras palabras: 'No confíes en el androide. Sabía antes que nosotros.'"}
+    },
+    "lore_ajax_betrayal": {
+      "title": {"en": "AJAX-7 Access Logs — Petra's Discovery", "it": "Log Accesso AJAX-7 — Scoperta di Petra", "es": "Registros de Acceso AJAX-7 — Descubrimiento de Petra"},
+      "text": {"en": "Petra found AJAX-7's access logs in the Architect servers — he pulled all containment override protocols three days before the outbreak. Corporate reassignment, six months prior. He was sent here.", "it": "Petra ha trovato i log di accesso di AJAX-7 nei server di Architect — ha estratto tutti i protocolli di override del contenimento tre giorni prima dello scoppio. Riassegnazione aziendale, sei mesi prima. È stato mandato qui.", "es": "Petra encontró los registros de acceso de AJAX-7 en los servidores de Architect — extrajo todos los protocolos de anulación de contención tres días antes del brote. Reasignación corporativa, seis meses antes. Lo enviaron aquí."}
+    },
+    "lore_ajax_mission": {
+      "title": {"en": "AJAX-7 — Confrontation Response", "it": "AJAX-7 — Risposta al Confronto", "es": "AJAX-7 — Respuesta al Confrontamiento"},
+      "text": {"en": "AJAX-7 when confronted: 'I have been asked to complete a mission. Our objectives may not be identical. But my function is not your destruction.' Not a denial.", "it": "AJAX-7 quando confrontato: 'Mi è stato chiesto di completare una missione. I nostri obiettivi potrebbero non essere identici. Ma la mia funzione non è la vostra distruzione.' Non una negazione.", "es": "AJAX-7 cuando fue confrontado: 'Se me ha pedido que complete una misión. Nuestros objetivos pueden no ser idénticos. Pero mi función no es vuestra destrucción.' No es una negación."}
+    }
+  }
+}
